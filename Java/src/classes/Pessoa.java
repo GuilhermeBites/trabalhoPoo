@@ -1,7 +1,7 @@
 package classes;
 
 public abstract class Pessoa {
-	//variáveis;
+	//variaveis
 	String nome;
 	int idPessoa;
 	String login;

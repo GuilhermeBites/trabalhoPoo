@@ -1,6 +1,7 @@
 package interfaces;
 
 public interface Produto {
+	//gets e sets
 	//public void setNomeProduto();
 	//public String getNomeProduto();
 	//public int getIdProduto();
