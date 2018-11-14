@@ -1,4 +1,6 @@
-package terminal_totem;
+package classes;
+
+import interfaces.Produto;
 
 public class Livros implements Produto {
 

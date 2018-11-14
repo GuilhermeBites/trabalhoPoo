@@ -1,5 +1,5 @@
-package terminal_totem;
+package interfaces;
 
 public interface Produto {
-
+	
 }

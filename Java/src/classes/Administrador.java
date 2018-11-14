@@ -1,4 +1,4 @@
-package terminal_totem;
+package classes;
 
 public class Administrador extends Pessoa{
 
