@@ -1,8 +1,8 @@
 package classes;
 
 public class Administrador extends Pessoa{
-	String senhaAdmin;
+	String senhaCadastroProdutos;
 	public Administrador() {
-		this.senhaAdmin = "123";
+		this.senhaCadastroProdutos = "123";
 	}
 }
