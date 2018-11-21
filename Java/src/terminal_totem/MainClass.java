@@ -97,6 +97,7 @@ public class MainClass {
 		admin.setLogin(scan.nextLine());
 		System.out.println("\nSenha: ");
 		admin.setSenha(scan.nextLine());
+		//alteracao qualquer para tentar resolver erro do git
 	}
 	
 
