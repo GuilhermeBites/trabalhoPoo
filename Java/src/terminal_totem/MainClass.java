@@ -1,6 +1,7 @@
 package terminal_totem;
 
 import java.util.*;
+import classes.*;
 
 import classes.Cliente;
 
@@ -23,9 +24,33 @@ public class MainClass {
 			scan.nextLine();
 			switch(op) {
 			case 1:
-				Cliente novoCliente = new Cliente();
+				/*Cliente novoCliente = new Cliente();
 				cadPessoa(novoCliente);
-				clientes.add(novoCliente);
+				clientes.add(novoCliente);*/
+				System.out.println("Deseja se cadastrar como "
+						+"cliente ou administrador ?");
+				System.out.println("< 1 - administrador (e necessario permissao do sistema)>");
+				System.out.println("< 2 - cliente>");
+				System.out.print("Opção -> ");
+				int opcaoCadastro = scan.nextInt();
+				if(opcaoCadastro == 1/*admin*/) {
+					Administrador adminSistema = new Administrador();
+					System.out.println("<Digite a senha de administrador para permitir o cadastro>");
+					System.out.print("Senha -> ");
+					int senhaAdmin = scan.nextInt();
+					boolean permissao = permissaoAdmin(senhaAdmin,adminSistema);
+					if(permissao == true) {
+						Administrador adm = new Administrador();
+						cadAdmin(adm);
+					}else {
+						System.out.println("nao foi possivel cadastrar o administrador");
+					}
+					
+				}else if(opcaoCadastro == 2/*cliente*/) {
+					Cliente novoCliente = new Cliente();
+					cadPessoa(novoCliente);
+					clientes.add(novoCliente);
+				}
 				break;
 			case 2:
 				break;
@@ -55,5 +80,24 @@ public class MainClass {
 		
 		idSequence += 1;
 	}
+	
+	public static boolean permissaoAdmin(int senha,Administrador admin) {
+		if(senha == admin.senhaAdmin) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public static void cadAdmin(Administrador admin) {
+		System.out.println("Favor preecher os campos a baixo:");
+		System.out.print("Nome: ");
+		admin.setNome(scan.nextLine());
+		System.out.println("\nLogin: ");
+		admin.setLogin(scan.nextLine());
+		System.out.println("\nSenha: ");
+		admin.setSenha(scan.nextLine());
+	}
+	
 
 }
